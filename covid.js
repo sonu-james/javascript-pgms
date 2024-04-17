@@ -20,19 +20,35 @@ console.log("-------------------");
 console.log(' district having Highest 1st dose vaccine ');
 highest=covid_data.reduce((n1,n2)=>n1[5]>n2[5]?n1:n2)
 console.log(highest[1]);
+console.log(' district having lowest death rate ');
 //3. district having lowest death rate
-lowe
-
+lowest=covid_data.reduce((n1,n2)=>n1[3]<n2[3]?n1:n2)
+console.log(lowest[1]);
+console.log('sort data with +ve case in descending order');
 //4. sort data with +ve case in descending order
+sortdata=covid_data.sort((n1,n2)=>n2[2]-n1[2]).forEach(pro =>console.log(pro[1]));
 
 //5. is district with +ve cases > 15000
+console.log('is district with +ve cases > 15000');
+dist=covid_data.some(num=>num[2]>=15000)
+console.log(dist?'yes':'no');
 
 //6. sort data with 1st dose vaccine ascending order
-
+console.log('sort data with 1st dose vaccine ascending order');
+sortdata=covid_data.sort((n1,n2)=>n1[5]-n2[5]).forEach(pro =>console.log(pro[1]));
 //7. Print Thrissur details
-
+console.log('Print Thrissur details');
+dtname=covid_data.find(data=>data[1]='Thrissur')
+console.log(dtname);
 //8. Print total number of positive cases
-
+console.log("Print total number of positive cases");
+tnpcase=covid_data.map(pc=>pc[2]).reduce((n1,n2)=>n1+n2)
+console.log(tnpcase);
 //9. Print total number of curred cases
-
+console.log('Print total number of curred cases');
+curred=covid_data.map(cc=>cc[4]).reduce((n1,n2)=>n1+n2)
+console.log(curred);
 //10. Print curred cases in Idukki
+console.log('Print curred cases in Idukki');
+details=covid_data.find(data=>data[1]='Idukki')
+console.log(details[4]);
