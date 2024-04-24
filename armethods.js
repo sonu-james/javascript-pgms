@@ -21,16 +21,16 @@ console.log("--------a new array with number <=13 increment by 1 and number>13  
 //o/p [11,12,13,12,13,14]
 for(let num of a){
     if(num<=13){
-        num++
+        num=num+1
     }
     else if(num>=13){
-        num--
+        num=num-1
     }
     else{
         console.log("no increment");
     }
 
-}
+}console.log(a);
 
 console.log("-------reduce Method-------------");
 //reduce method
